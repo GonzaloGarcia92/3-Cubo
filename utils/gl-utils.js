@@ -1,3 +1,5 @@
+import { mat4, glMatrix } from './gl-matrix/index.js'
+
 /**
  * @param {string} id
  * @returns {HTMLCanvasElement}
@@ -103,4 +105,31 @@ export function bindAttributeToVertexBuffer(gl, attributeLocation, attributeSize
   gl.bindBuffer(gl.ARRAY_BUFFER, buffer)
   gl.vertexAttribPointer(attributeLocation, attributeSize, gl.FLOAT, false, 0, 0)
   gl.bindBuffer(gl.ARRAY_BUFFER, null)
+}
+
+/**
+ * @param {WebGL2RenderingContext} gl
+ * @param {WebGLProgram} program
+ * @param {HTMLCanvasElement} canvas
+ */
+export function magic(gl, program, canvas) {
+  const viewMatrixLocation = gl.getUniformLocation(program, "viewMatrix")
+  const projectionMatrixLocation = gl.getUniformLocation(program, "projectionMatrix")
+
+  const viewMatrix = mat4.create()
+  const projectionMatrix = mat4.create()
+
+  const eye = [3, 3, 5]
+  const center = [0, 0, 0]
+  const up = [0, 1, 0]
+  mat4.lookAt(viewMatrix, eye, center, up)
+
+  const fov = glMatrix.toRadian(45)
+  const aspect = canvas.width / canvas.height
+  const near = 0.1
+  const far = 10
+  mat4.perspective(projectionMatrix, fov, aspect, near, far)
+
+  gl.uniformMatrix4fv(viewMatrixLocation, false, viewMatrix)
+  gl.uniformMatrix4fv(projectionMatrixLocation, false, projectionMatrix)
 }
