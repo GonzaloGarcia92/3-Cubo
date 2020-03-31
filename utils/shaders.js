@@ -1,13 +1,15 @@
 export const vertexShaderSourceCode = `#version 300 es
+  uniform mat4 viewMatrix;
+  uniform mat4 projectionMatrix;
 
-  in vec2 vertexPosition;
+  in vec3 vertexPosition;
   in vec3 vertexColor;
 
   out vec3 color;
 
   void main() {
     color = vertexColor;
-    gl_Position = vec4(vertexPosition, 0, 1);
+    gl_Position = projectionMatrix * viewMatrix * vec4(vertexPosition, 1);
   }
 `
 
