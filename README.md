@@ -1,4 +1,4 @@
-# Manejo de Indices
+# Hola Cubo 👋
 
 <p align="center">
   <img src="docs/previews.png"/>
@@ -6,15 +6,12 @@
 
 ### Branches 🌳
 
-- `sin indices`
-- `con indices`
-- `gradiente`
+- `sin depth test`
+- `con depth test`
 
 ### Referencias 📚
 
-- [Index Buffers in OpenGL](https://www.youtube.com/watch?v=MXNMC1YAxVQ)
-- [WebGL 2 Fundamentals - Indexed Vertices](https://webgl2fundamentals.org/webgl/lessons/webgl-indexed-vertices.html)
-- [WebGL Programming Guide](https://www.oreilly.com/library/view/webgl-programming-guide/9780133364903/) `Capitulo 7 - Hello Cube`
+- [WebGL Programming Guide](https://www.oreilly.com/library/view/webgl-programming-guide/9780133364903/) `Capitulo 7 - Correctly Handling Foreground and Background Objects`
 
 ### Uso 💻
 
