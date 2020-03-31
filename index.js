@@ -10,6 +10,9 @@ const gl = getWebGL2Context(canvas)
 // Seteamos el color que vamos a usar para 'limpiar' el canvas (i.e. el color de fondo)
 gl.clearColor(0, 0, 0, 1)
 
+// Habilitamos el test de profundidad
+gl.enable(gl.DEPTH_TEST)
+
 // #️⃣ Creamos los shaders, el programa que vamos a usar, y guardamos info de sus atributos
 
 const vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSourceCode)
@@ -106,7 +109,7 @@ magic(gl, program, canvas)
 // #️⃣ Dibujamos la escena
 
 // Limpiamos el canvas
-gl.clear(gl.COLOR_BUFFER_BIT)
+gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT)
 
 // Y dibujamos 🎨
 gl.drawElements(gl.TRIANGLES, indices.length, gl.UNSIGNED_SHORT, 0)
