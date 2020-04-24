@@ -30,8 +30,8 @@ const vertexPositions = [
   1, 1, 1,    // 1
   1, 1, -1,   // 2
   -1, 1, -1,  // 3
-  -1, -1, 1,  // 4
-  1, -1, 1,   // 5
+  0.5, -1, 1,  // 4
+  0.5, -1, 1,   // 5
   1, -1, -1,  // 6
   -1, -1, -1  // 7
 ]
@@ -52,20 +52,20 @@ const indices = [
   0, 1, 3,
   3, 1, 2,
   // abajo
-  7, 5, 4,
-  5, 7, 6,
+  //7, 5, 4,
+  //5, 7, 6,
   // izquierda
   3, 4, 0,
   3, 7, 4,
   // derecha
   5, 2, 1,
-  5, 6, 2,
+  //5, 6, 2,
   // adelante
   4, 1, 0,
   4, 5, 1,
   // atrás
-  6, 3, 2,
-  6, 7, 3,
+  //6, 3, 2,
+  //6, 7, 3,
 ]
 
 /* 📝 Cada cara esta formada por dos triángulos, donde sus indices siguen la convención de sentido
